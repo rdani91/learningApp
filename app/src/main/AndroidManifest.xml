@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="hu.rozsa.daniel.learningapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".first.DummyActivity"/>
+        <service android:name=".first.DummyService"/>
+        <receiver android:name=".first.DummyBroadcastReceiver"/>
+
+        <activity android:name=".second.SecondActivity"/>
+        <service android:name=".second.SecondBindService"/>
+        <service android:name=".second.SecondIntentService"/>
+        <service android:name=".second.SecondService"/>
+
+        <activity android:name=".third.ViewReplaceActivity"/>
+        <activity android:name=".third.FragmentExampleActivity"/>
+
+        <receiver android:name=".fifth.BroadcastReceiverExample">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:authorities="hu.rozsa.daniel.provider.TEST"
+            android:name=".sixth.ContentProviderExample"/>
+
+    </application>
+
+</manifest>
