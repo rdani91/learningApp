@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseExample extends SQLiteOpenHelper {
+public class MyDBHandler extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "testTable";
     public static final String NAME = "name";
     public static final String AGE = "age";
@@ -15,7 +15,7 @@ public class DatabaseExample extends SQLiteOpenHelper {
             NAME + " TEXT NOT NULL, " +
             AGE + " INTEGER NOT NULL);";
 
-    public DatabaseExample(Context c) {
+    public MyDBHandler(Context c) {
         super(c, DB_NAME, null, DB_VERSION);
     }
 

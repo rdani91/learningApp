@@ -35,8 +35,8 @@ public class ContentProviderExample extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        DatabaseExample databaseExample = new DatabaseExample(getContext());
-        db = databaseExample.getWritableDatabase();
+        MyDBHandler myDBHandler = new MyDBHandler(getContext());
+        db = myDBHandler.getWritableDatabase();
         return db != null;
     }
 
@@ -44,12 +44,12 @@ public class ContentProviderExample extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        qb.setTables(DatabaseExample.TABLE_NAME);
+        qb.setTables(MyDBHandler.TABLE_NAME);
 
         HashMap<String, String> projectionMap = new HashMap<>();
         projectionMap.put("_ID", "_ID");
-        projectionMap.put(DatabaseExample.NAME, DatabaseExample.NAME);
-        projectionMap.put(DatabaseExample.AGE, DatabaseExample.AGE);
+        projectionMap.put(MyDBHandler.NAME, MyDBHandler.NAME);
+        projectionMap.put(MyDBHandler.AGE, MyDBHandler.AGE);
         switch (uriMatcher.match(uri)) {
             case ELEMENTS:
                 qb.setProjectionMap(projectionMap);
@@ -65,7 +65,7 @@ public class ContentProviderExample extends ContentProvider {
         }
 
         if (sortOrder == null || "".equals(sortOrder)) {
-            sortOrder = DatabaseExample.AGE;
+            sortOrder = MyDBHandler.AGE;
         }
         Cursor c = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder);
 
@@ -90,7 +90,7 @@ public class ContentProviderExample extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        long rowID = db.insert(DatabaseExample.TABLE_NAME, "", values);
+        long rowID = db.insert(MyDBHandler.TABLE_NAME, "", values);
         if (rowID > 0) {
             Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
             getContext().getContentResolver()
@@ -106,13 +106,13 @@ public class ContentProviderExample extends ContentProvider {
 
         switch (uriMatcher.match(uri)) {
             case ELEMENTS:
-                count = db.delete(DatabaseExample.TABLE_NAME, selection, selectionArgs);
+                count = db.delete(MyDBHandler.TABLE_NAME, selection, selectionArgs);
                 break;
 
             case ELEMENT_ID:
                 String id = uri.getPathSegments()
                                .get(1);
-                count = db.delete(DatabaseExample.TABLE_NAME, _ID + " = " + id +
+                count = db.delete(MyDBHandler.TABLE_NAME, _ID + " = " + id +
                         (!TextUtils.isEmpty(selection) ? " AND (" + selection + ')' : ""), selectionArgs);
                 break;
 
@@ -131,11 +131,11 @@ public class ContentProviderExample extends ContentProvider {
 
         switch (uriMatcher.match(uri)) {
             case ELEMENTS:
-                count = db.update(DatabaseExample.TABLE_NAME, values, selection, selectionArgs);
+                count = db.update(MyDBHandler.TABLE_NAME, values, selection, selectionArgs);
                 break;
 
             case ELEMENT_ID:
-                count = db.update(DatabaseExample.TABLE_NAME, values, _ID + " = " + uri.getPathSegments()
+                count = db.update(MyDBHandler.TABLE_NAME, values, _ID + " = " + uri.getPathSegments()
                                                                                        .get(1) +
                         (!TextUtils.isEmpty(selection) ? " AND (" + selection + ')' : ""), selectionArgs);
                 break;

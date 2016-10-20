@@ -51,13 +51,25 @@ public class ContentProviderFragment extends Fragment {
             public void onRefresh() {
                 swipeRefreshLayout.setRefreshing(true);
 
-                getDataFromCP();
+                getDataFromDB();
+//                getDataFromCP();
             }
         });
 
         ListView lvSample = (ListView) view.findViewById(R.id.lvSampleCP);
         adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items);
         lvSample.setAdapter(adapter);
+    }
+
+    private void getDataFromDB() {
+        items.clear();
+
+        MyTestDbWrapper myTestDbWrapper = MyTestDbWrapper.getInstance();
+        myTestDbWrapper.initContext(getActivity());
+        List<String> namesWithAge = myTestDbWrapper.getNamesWithAgeAbove25();
+        items.addAll(namesWithAge);
+        adapter.notifyDataSetChanged();
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     private void getDataFromCP() {
@@ -73,8 +85,8 @@ public class ContentProviderFragment extends Fragment {
 
         if (c != null) {
             while (c.moveToNext()) {
-                String concatString = c.getString(c.getColumnIndex(DatabaseExample.NAME)) + " - "
-                        + c.getString(c.getColumnIndex(DatabaseExample.AGE));
+                String concatString = c.getString(c.getColumnIndex(MyDBHandler.NAME)) + " - "
+                        + c.getString(c.getColumnIndex(MyDBHandler.AGE));
                 items.add(concatString);
             }
         }
@@ -116,8 +128,8 @@ public class ContentProviderFragment extends Fragment {
 
     private void putIntoCP(String name, String age) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseExample.NAME, name);
-        contentValues.put(DatabaseExample.AGE, age);
+        contentValues.put(MyDBHandler.NAME, name);
+        contentValues.put(MyDBHandler.AGE, age);
 
         getActivity().getContentResolver()
                      .insert(ContentProviderExample.CONTENT_URI, contentValues);
