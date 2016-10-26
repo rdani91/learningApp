@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import hu.rozsa.daniel.learningapplication.fourth.ListViewFragment;
 import hu.rozsa.daniel.learningapplication.fourth.RecycleViewFragment;
+import hu.rozsa.daniel.learningapplication.seventh.notification.NotificationExampleFragment;
 import hu.rozsa.daniel.learningapplication.sixth.db_cp.ContentProviderFragment;
 import hu.rozsa.daniel.learningapplication.third.EventHandling;
 
@@ -105,6 +106,8 @@ public class MainActivity extends AppCompatActivity
             loadFragment(new RecycleViewFragment());
         } else if (id == R.id.sixth_content_provider) {
             loadFragment(new ContentProviderFragment());
+        } else if (id == R.id.notification_example){
+            loadFragment(new NotificationExampleFragment());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

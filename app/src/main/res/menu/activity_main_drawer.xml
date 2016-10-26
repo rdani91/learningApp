@@ -14,5 +14,8 @@
         <item
             android:id="@+id/sixth_content_provider"
             android:title="Content provider"/>
+        <item
+            android:id="@+id/notification_example"
+            android:title="Notification"/>
     </group>
 </menu>
