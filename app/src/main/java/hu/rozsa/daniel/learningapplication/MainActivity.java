@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import hu.rozsa.daniel.learningapplication.fourth.ListViewFragment;
 import hu.rozsa.daniel.learningapplication.fourth.RecycleViewFragment;
-import hu.rozsa.daniel.learningapplication.sixth.ContentProviderFragment;
+import hu.rozsa.daniel.learningapplication.sixth.db_cp.ContentProviderFragment;
 import hu.rozsa.daniel.learningapplication.third.EventHandling;
 
 public class MainActivity extends AppCompatActivity
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.fourth_recycleView) {
             loadFragment(new RecycleViewFragment());
-        } else if(id == R.id.sixth_content_provider){
+        } else if (id == R.id.sixth_content_provider) {
             loadFragment(new ContentProviderFragment());
         }
 

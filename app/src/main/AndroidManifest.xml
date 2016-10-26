@@ -38,7 +38,7 @@
 
         <provider
             android:authorities="hu.rozsa.daniel.provider.TEST"
-            android:name=".sixth.ContentProviderExample"/>
+            android:name=".sixth.db_cp.ContentProviderExample"/>
 
     </application>
 

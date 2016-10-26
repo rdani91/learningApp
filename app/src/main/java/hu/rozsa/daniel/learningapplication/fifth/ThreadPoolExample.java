@@ -10,7 +10,10 @@ public class ThreadPoolExample {
     private static final int NUMBER_OF_CORES = Runtime.getRuntime().availableProcessors();
     private BlockingDeque<Runnable> runnables = new LinkedBlockingDeque<>();
 
-    private ThreadPoolExecutor executor = new ThreadPoolExecutor(NUMBER_OF_CORES*2, NUMBER_OF_CORES*2, 60L, TimeUnit.SECONDS, runnables);
+    private ThreadPoolExecutor executor = new ThreadPoolExecutor(NUMBER_OF_CORES*2,
+                                                                 NUMBER_OF_CORES*2,
+                                                                 60L, TimeUnit.SECONDS,
+                                                                 runnables);
 
 
     public void executeNext(Runnable runnable){

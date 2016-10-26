@@ -1,4 +1,4 @@
-package hu.rozsa.daniel.learningapplication.sixth;
+package hu.rozsa.daniel.learningapplication.sixth.db_cp;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,5 +28,10 @@ public class MyDBHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        super.onDowngrade(db, oldVersion, newVersion);
     }
 }

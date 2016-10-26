@@ -3,7 +3,7 @@ package hu.rozsa.daniel.learningapplication.fifth;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 
-public class AsyncTaskExample extends AsyncTask<Void, Void, String> {
+public class AsyncTaskExample extends AsyncTask<Void, Integer, String> {
 
     @Override
     protected void onPreExecute() {
@@ -13,10 +13,12 @@ public class AsyncTaskExample extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
         SystemClock.sleep(3000);
+
+        publishProgress(12);
         return "This is a test response";    }
 
     @Override
-    protected void onProgressUpdate(Void... values) {
+    protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
     }
 

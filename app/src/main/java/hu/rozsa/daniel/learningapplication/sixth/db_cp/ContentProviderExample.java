@@ -1,4 +1,4 @@
-package hu.rozsa.daniel.learningapplication.sixth;
+package hu.rozsa.daniel.learningapplication.sixth.db_cp;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

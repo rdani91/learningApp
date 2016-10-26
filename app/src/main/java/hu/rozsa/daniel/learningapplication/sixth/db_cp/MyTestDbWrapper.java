@@ -1,4 +1,4 @@
-package hu.rozsa.daniel.learningapplication.sixth;
+package hu.rozsa.daniel.learningapplication.sixth.db_cp;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -42,8 +42,10 @@ public class MyTestDbWrapper {
 
 
         Cursor query = db.query(MyDBHandler.TABLE_NAME,
+
                 new String[]{MyDBHandler.NAME,
                         MyDBHandler.AGE},
+
                 MyDBHandler.AGE + "> ?",
                 new String[]{"25"},
                 null,
