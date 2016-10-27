@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class OkHttpExample implements NetworkPlugin {
+public class OkHTTPExample implements NetworkPlugin {
 
     private OkHttpClient client = new OkHttpClient();
     private Gson gson = new Gson();
