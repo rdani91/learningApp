@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCustomView">
+        <attr name="customText" format="string" />
+
+        <attr name="scrollTo" format="integer">
+            <enum name="scroll_to_top" value="-1" />
+        </attr>
+        <attr name="qwe" format="integer">
+            <flag name="state1" value="1" />
+            <flag name="state2" value="2" />
+            <flag name="state3" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

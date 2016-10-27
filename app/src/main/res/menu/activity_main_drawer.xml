@@ -17,5 +17,8 @@
         <item
             android:id="@+id/notification_example"
             android:title="Notification"/>
+        <item
+            android:id="@+id/custom_tag"
+            android:title="Custom tag"/>
     </group>
 </menu>
