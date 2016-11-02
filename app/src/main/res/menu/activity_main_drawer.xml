@@ -20,5 +20,14 @@
         <item
             android:id="@+id/custom_tag"
             android:title="Custom tag"/>
+        <item
+            android:id="@+id/touch"
+            android:title="Touch example"/>
+        <item
+            android:id="@+id/sensor"
+            android:title="Sensor example"/>
+        <item
+            android:id="@+id/location"
+            android:title="Location example"/>
     </group>
 </menu>

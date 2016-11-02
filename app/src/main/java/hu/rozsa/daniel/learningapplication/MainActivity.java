@@ -2,9 +2,7 @@ package hu.rozsa.daniel.learningapplication;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import hu.rozsa.daniel.learningapplication.eighth.LocationExampleFragment;
+import hu.rozsa.daniel.learningapplication.eighth.SensorFragment;
+import hu.rozsa.daniel.learningapplication.eighth.TouchExampleFragment;
 import hu.rozsa.daniel.learningapplication.fourth.ListViewFragment;
 import hu.rozsa.daniel.learningapplication.fourth.RecycleViewFragment;
 import hu.rozsa.daniel.learningapplication.seventh.customtag.CustomTagFragment;
@@ -33,15 +34,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,8 +47,8 @@ public class MainActivity extends AppCompatActivity
 
     private void loadFragment(Fragment targetFragment) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragmentContainer, targetFragment)
-                .commit();
+                                   .replace(R.id.fragmentContainer, targetFragment)
+                                   .commit();
     }
 
     @Override
@@ -111,6 +103,12 @@ public class MainActivity extends AppCompatActivity
             loadFragment(new NotificationExampleFragment());
         } else if (id == R.id.custom_tag) {
             loadFragment(new CustomTagFragment());
+        } else if (id == R.id.touch) {
+            loadFragment(new TouchExampleFragment());
+        } else if (id == R.id.sensor) {
+            loadFragment(new SensorFragment());
+        } else if (id == R.id.location) {
+            loadFragment(new LocationExampleFragment());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -121,6 +119,6 @@ public class MainActivity extends AppCompatActivity
 
     public void onTvClick(View view) {
         Toast.makeText(this, "Dummy text has been clicked!", Toast.LENGTH_SHORT)
-                .show();
+             .show();
     }
 }
