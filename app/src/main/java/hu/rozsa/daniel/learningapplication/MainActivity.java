@@ -19,6 +19,8 @@ import hu.rozsa.daniel.learningapplication.eighth.SensorFragment;
 import hu.rozsa.daniel.learningapplication.eighth.TouchExampleFragment;
 import hu.rozsa.daniel.learningapplication.fourth.ListViewFragment;
 import hu.rozsa.daniel.learningapplication.fourth.RecycleViewFragment;
+import hu.rozsa.daniel.learningapplication.ninth.ExampleNativeFragment;
+import hu.rozsa.daniel.learningapplication.ninth.MyDrawFragment;
 import hu.rozsa.daniel.learningapplication.seventh.customtag.CustomTagFragment;
 import hu.rozsa.daniel.learningapplication.seventh.notification.NotificationExampleFragment;
 import hu.rozsa.daniel.learningapplication.sixth.db_cp.ContentProviderFragment;
@@ -109,6 +111,10 @@ public class MainActivity extends AppCompatActivity
             loadFragment(new SensorFragment());
         } else if (id == R.id.location) {
             loadFragment(new LocationExampleFragment());
+        } else if( id == R.id.my_draw){
+            loadFragment(new MyDrawFragment());
+        } else if( id == R.id.native_){
+            loadFragment(new ExampleNativeFragment());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
