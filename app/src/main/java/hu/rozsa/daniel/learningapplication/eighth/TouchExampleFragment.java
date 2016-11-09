@@ -1,5 +1,7 @@
 package hu.rozsa.daniel.learningapplication.eighth;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import hu.rozsa.daniel.learningapplication.R;
 
@@ -30,6 +35,22 @@ public class TouchExampleFragment extends Fragment implements View.OnTouchListen
         View rootView = view.findViewById(R.id.root);
         View upperView1 = view.findViewById(R.id.upperView1);
         View upperView2 = view.findViewById(R.id.upperView2);
+
+        Bitmap bitmap = Bitmap.createBitmap(1000, 1000, Bitmap.Config.ARGB_8888);
+
+//
+//        Bitmap resBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.fake_ragnar);
+//
+//        imgSample.setImageBitmap(resBitmap);
+
+
+        ImageView imgSample = (ImageView) view.findViewById(R.id.imgSample);
+
+        Picasso.with(getContext())
+                .load(R.drawable.fake_ragnar)
+                .into(imgSample);
+
+
         tvLog = (TextView) view.findViewById(R.id.tvLog);
 
         view.findViewById(R.id.btnClearText)

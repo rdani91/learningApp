@@ -8,6 +8,12 @@
     android:orientation="vertical">
 
 
+    <ImageView
+        android:id="@+id/imgSample"
+        android:layout_width="64dp"
+        android:layout_height="64dp"/>
+
+
     <View
         android:id="@+id/upperView1"
         android:layout_width="match_parent"
