@@ -28,7 +28,6 @@ public class MyDrawView extends View {
         super(context, attrs, defStyleAttr);
     }
 
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -47,6 +46,7 @@ public class MyDrawView extends View {
         path.lineTo(c.x, c.y);
         path.lineTo(a.x, a.y);
         path.close();
+
 
         canvas.drawPath(path, paint);
     }

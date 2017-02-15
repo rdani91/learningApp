@@ -35,4 +35,5 @@ public class ExampleNativeFragment extends Fragment {
     public native String getMsgFromJni();
 
     public native String getSecondNativeString();
+
 }
