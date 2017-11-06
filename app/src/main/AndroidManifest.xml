@@ -56,6 +56,14 @@
             android:name=".sixth.db_cp.ContentProviderExample"
             android:authorities="hu.rozsa.daniel.provider.TEST" />
 
+        <service
+            android:name=".libs.firebase.MyFireBaseService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name=".libs.firebase.MyFireBaseMessagingService"/>
+
     </application>
 
 </manifest>
