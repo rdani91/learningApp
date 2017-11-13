@@ -115,7 +115,7 @@ public class ExampleAdapter extends BaseAdapter {
 
 
         }
-        throw new IllegalStateException("Ilyen state nem fordulhat elő, mert csak páros és páratlan számok léteznek :D");
+        throw new IllegalStateException("Ilyen state nem fordulhat elő, mert csak páros és páratlan számok léteznek");
     }
 
     private class ViewHolderType1 {

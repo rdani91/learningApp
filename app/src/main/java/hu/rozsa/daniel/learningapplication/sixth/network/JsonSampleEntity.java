@@ -10,6 +10,14 @@ public class JsonSampleEntity {
         public String name;
         public int age;
 
+        public User(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public User() {
+        }
+
         public Education education;
 
         public static class Education {
