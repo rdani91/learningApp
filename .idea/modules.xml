@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LearningApplication.iml" filepath="$PROJECT_DIR$/LearningApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Android\Workspace\LearningApplication\learningApp.iml" filepath="C:\Android\Workspace\LearningApplication\learningApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logic/logic.iml" filepath="$PROJECT_DIR$/logic/logic.iml" />
     </modules>
   </component>
 </project>
